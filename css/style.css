@@ -103,6 +103,9 @@ p{
     letter-spacing: 0.02em;
     text-decoration: none;
 } 
+.site-nav .link.current {
+    color: var(--accent-color);
+}
 
 .site-nav .site-item:not(:last-child) {
     margin-right: 50px;
@@ -111,6 +114,10 @@ p{
 .site-nav .link:focus {
     color: var(--accent-color);
 }
+/* посилання активне 
+.contact-item .current{
+    color: var(--accent-color)
+}*/
 
 .contact-nav{
     display: flex; 
@@ -119,25 +126,31 @@ p{
 .contact-item:not(:last-child) {
     margin-right: 50px;
 }
-
-.contact-nav .link{
+.contact-link{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: inherit;  
+}
+.contact-link{
     color: var(--secondary-text-color);
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: 0.02em;
     text-decoration: none;
-    
 }
-.contact-nav .link:not(:last-child) {
+.contact-icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
+.contact-link:not(:last-child) {
     margin-right: 50px;
 }
-.contact-nav .link:hover,
-.contact-nav .link:focus{
+.contact-link:hover,
+.contact-link:focus{
     color: var(--accent-color);
 }
-.site-nav .link.current{
-    color:var(--accent-color);
-}
+
 
 /*HERO*/
 
@@ -294,8 +307,6 @@ text-align: center;
     flex-wrap: wrap;
     justify-content: center;
     gap:30px;
-}
-.portfolio-item{
 }
 .portfolio-content{
     padding: 20px 24px;
