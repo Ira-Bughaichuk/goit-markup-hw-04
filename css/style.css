@@ -7,10 +7,14 @@
     --black-color: #000000;
     --header-border-color: #ECECEC;
     --port-border-color:#EEEEEE;
+    --client-icon-color:#AFB1B8;
+    --color-gradient:rgba(47, 48, 58, 0.4);
 
+    --footer-icon-baground-color: rgba(255, 255, 255, 0.1);
     --primary-background-color: #FFFFFF;
     --secondary-background-color:#F5F4FA;
-    --banner-footer-color: #2F303A;
+    --footer-color: #2F303A;
+    --banner-color:#C4C4C4;
 }
 
 
@@ -157,8 +161,15 @@ p{
     
 .hero{
     padding: 200px 0;
-    background-color:var(--banner-footer-color);
-    
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: var(--banner-color);
+    background-image: linear-gradient(to right, var(--color-gradient), var(--color-gradient)),
+    url(../images/hero.jpg);
+    padding: 200px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
 }
 .hero .hero-title{
     max-width: 696px;
@@ -200,10 +211,27 @@ p{
 .feature-list{
     display: flex;
     column-gap: 30px;
+    padding: 5px;
 }
 .feature-item .title{
     margin-bottom: 10px
 }
+/* виставити svg*/
+.feature-thumba{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height:120px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    background-color: var(--secondary-background-color);
+}
+.feature-icon {
+    fill:currentColor;
+}
+
+
 .feature-list .title,
 .team-list .title {
     color: var(--title-color);
@@ -214,7 +242,7 @@ p{
     line-height: 1.14;
     text-transform: uppercase;
 }
-.benefits{
+.visibility-hidden{
     display: none;
 }
 .section-title{
@@ -225,21 +253,6 @@ p{
     text-align: center;
     margin-bottom: 50px;
 }
-.team-list .title {
-font-weight: 500;
-font-size: 16px;
-line-height: 1.19;
-text-align: center;
-}
-.team-list .text{
-    font-size: 16px;
-    line-height: 1.19;
-    text-align: center;}
-
-.our-team {
-    background-color: var(--secondary-background-color);
-}
-/**/
 .section-work{
     padding-bottom: 94px;
 }
@@ -257,14 +270,68 @@ text-align: center;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 }
-.team-content{
+.team-list .title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+}
+.team-list .text {
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+}
+.our-team {
+    background-color: var(--secondary-background-color);
+}
+/*--------------------*/
+
+.team-content .title {
+    margin-bottom: 10px;
+}
+.team-item .text {
+    margin-bottom: 16px;
+}
+.team-icons{
+    display:flex;
+    width: 206px;
+    height: 44px;
+    column-gap: 10px;
+}
+/* виставити svg*/
+.team-content {
     padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.team-content .title{
-    margin-bottom: 10px ;
+.team-icon-item{
+    list-style: none;
+    color: #AFB1B8;
 }
-
-
+.team-icon-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    color: inherit;
+    border-radius: 50%;
+    text-decoration: none;
+}
+.team-icon{
+    fill: currentColor;
+}
+.team-icon-link:hover,
+.team-icon-link:focus{
+    fill:var(--primary-text-color);
+    background-color: var(--accent-color);
+}
+.team-icon-link:hover .team-icon,
+.team-icon-link:focus .team-icon{
+    fill: var(--primary-text-color);
+    
+}
 /*portfolio.html*/
 .main{
     padding:100px 0 94px 0;
@@ -280,8 +347,11 @@ text-align: center;
     margin-bottom: 50px;
 }
 .buttons-items {
-    
     box-shadow: none;
+}
+.buttons-items:hover,
+.buttons-items:focus{
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio-button{
     color:var(--title-color);
@@ -301,6 +371,10 @@ text-align: center;
     color: var(--primary-text-color);
     background-color: var(--accent-color);
     cursor: pointer;
+}
+.portfolio-item:hover{
+
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-list{
     display: flex;
@@ -331,13 +405,52 @@ text-align: center;
     font-size: 16px;
     line-height: 1.88;
 }
+.section-clients{
+    padding: 94px 0;
+}
+.clients{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+}
+.client-item{
+    display: flex;
+    list-style: none;
+    fill: var(--client-icon-color);
+    width: 170px;
+    height: 92px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--client-icon-color);
+    border-radius: 4px;
 
+    /*---*/
+}
+.client-link{
+    display: flex;
+    color: inherit;
+    text-decoration: none;
+
+}
+.client-icon{
+    fill: currentColor;
+}
+
+.client-item:hover,
+.client-item:focus{
+    border-color: var(--accent-color);
+}
+.client-item:hover .client-icon,
+.client-item:focus .client-icon{
+    fill: var(--accent-color);
+}
 
 
 /*FOOTER*/
+/*--Footer-- width="106" height="60"*/
 .footer {
     padding: 60px 0;
-    background-color: var(--banner-footer-color);
+    background-color: var(--footer-color);
 }
 .footer-logo{
     display: inline-block;
@@ -372,7 +485,59 @@ text-align: center;
 .address-list .link:focus {
     color: var(--accent-color);
 }
+.footer-boxs{
+    display: flex;
+    /*column-gap: 70px;*/
+    list-style: none;
+}
+.footer-social{
+    /*display: block;*/
+    margin-left: 70px;
+    list-style: none;
+}
+.footer-title{
+    font-family: 'Roboto';  
+    font-weight: 700;
+    line-height: 1.1428;
+     text-transform: uppercase;
+     color: var(--primary-text-color);
+     margin-bottom: 20px;
+}
+.footer-icons{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap:10px;
+}
+.footer-item{
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color:var(--primary-text-color);
+    background-color: var(--footer-icon-baground-color);
+   
+}
+.footer-link{
+    display: flex;
+    /*justify-content: center;
+    align-content: center;*/
+    color: inherit;
 
+}
+.footer-icon{
+    fill: currentColor;
+}
+.footer-item:hover,
+.footer-item:focus{
+    background-color: var(--accent-color);
+}
+.footer-item:hover .footer-icon,
+.footer-item:focus .footer-icon{
+    fill: var(--primary-background-color);
+}
 
 
 
