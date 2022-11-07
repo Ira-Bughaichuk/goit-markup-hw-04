@@ -430,7 +430,7 @@ p{
     display: flex;
     color: inherit;
     text-decoration: none;
-
+    
 }
 .client-icon{
     fill: currentColor;
@@ -487,8 +487,8 @@ p{
 }
 .footer-boxs{
     display: flex;
-    /*column-gap: 70px;*/
     list-style: none;
+    align-items: baseline;/*зробити рівно до лого- рівняє по лінії текстового вмісту*/
 }
 .footer-social{
     /*display: block;*/
@@ -496,6 +496,7 @@ p{
     list-style: none;
 }
 .footer-title{
+  
     font-family: 'Roboto';  
     font-weight: 700;
     line-height: 1.1428;
@@ -506,6 +507,7 @@ p{
 .footer-icons{
     list-style: none;
     display: flex;
+  
     flex-wrap: wrap;
     column-gap:10px;
 }
